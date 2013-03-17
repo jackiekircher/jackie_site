@@ -61,6 +61,6 @@ class Post
   end
 
   def formatted_date
-    @formatted_date ||= @date.strftime("%d %B %Y")
+    @formatted_date ||= @date.strftime("%Y.%m.%d")
   end
 end
