@@ -3,10 +3,9 @@ Bundler.require
 
 require 'date'
 require_relative 'post'
-require_relative 'redirects'
 
 class Blog < Sinatra::Base
-  TITLE = "Lindsey Bieda"
+  TITLE = "jackie kircher"
 
   helpers Sinatra::ContentFor
 
@@ -31,15 +30,6 @@ class Blog < Sinatra::Base
     def url_base
       "http://#{request.host_with_port}"
     end
-  end
-
-  get '/index.php' do
-    # lol old php shit
-    if params[:n]
-      redirect REDIRECTS[params[:n]]
-    end
-    
-    redirect '/'
   end
 
   get '/' do
