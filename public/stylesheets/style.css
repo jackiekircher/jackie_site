@@ -1,6 +1,6 @@
 body {
 	margin:0;
-	background-image: url('../images/bg.png');
+  background-color: #f9fff6;
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 300;
 }
@@ -8,14 +8,13 @@ body {
 h1 {
 	font-family: 'Arial', sans-serif;
 	font-size: 3.5em;
-  color: #3f3f3f;
-	padding: 0 0.5em;
+  border-right: solid 6px rgb(232, 66, 247);
+  color: rgb(54, 20, 77);
+	padding-right: 28px;
 	letter-spacing: -0.03em;
 	line-height: 1.0em;
-	padding: 0;
-  margin-bottom: 0.2em;
+  margin-bottom: 0;
 	display: block;
-	width:100%;
   text-align: right;
 }
 
@@ -32,9 +31,10 @@ h3 {
 }
 
 article {
+  border-right: solid 6px rgb(232, 66, 247);
 	width: 68%;
 	float: right;
-	padding: 0 1em 0 0;
+	padding: 0 16px 0 0;
   margin-bottom: 2em;
 }
 
@@ -75,8 +75,8 @@ aside {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 200;
 	float: left;
-	width: 27%;
-	padding: 0 0 0 1em;
+	width: 25%;
+	padding: 0 0 0 22px;
 }
 
 aside p {
@@ -104,7 +104,8 @@ time {
 	font-family: 'Arial', sans-serif;
   text-align: right;
   padding-top: 0.2em;
-  margin-bottom: 1.0em;
+  padding-right: 12px;
+  margin-bottom: 1.5em;
 }
 
 time h2 {
@@ -113,23 +114,22 @@ time h2 {
 
 header {
 	font-family: 'Source Sans Pro', sans-serif;
-	font-weight: 200;
-	font-size: 2em;
-	color: #efefef;
+	font-size: 1.7em;
+	color: #f9fff6;
 	overflow: hidden;
 }
 
 header #title {
-	padding: 0.1em;
-	background-color: #3f3f3f;
+	padding: 0.2em;
+	background-color: rgb(54, 20, 77);
 }
 
 #subtitle {
-  color: rgb(213, 79, 255);
+  color: rgb(232, 66, 247);
 }
 
 nav {
-	color: #3f3f3f;
+	color: rgb(54, 20, 77);
   text-align: right;
 }
 
@@ -138,21 +138,21 @@ nav ul.left-nav {
 }
 
 nav ul {
-  border-bottom: solid 2px #efefef;
+  border-bottom: solid 2px #dfdfdf;
   margin: 0;
   padding: 0;
   line-height: 1.8em;
-  font-size: 0.6em;
+  font-size: 0.7em;
 }
 
 nav ul li {
-  border-bottom: solid 2px #efefef;
+  border-bottom: solid 2px #dfdfdf;
 	display: inline-block;
 	margin: 0 0 -2px;
   padding: 0 0.4em;
 }
 nav ul li:hover {
-  border-bottom: solid 2px rgb(213, 79, 255);
+  border-bottom: solid 2px rgb(232, 66, 247);
 }
 
 ol {
