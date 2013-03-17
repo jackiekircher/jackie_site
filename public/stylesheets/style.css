@@ -99,12 +99,11 @@ a, p a, ol li a, .archive a {
 
 time {
 	display: block;
-	border-top: solid 3px #efefef;
 	font-weight: 500;
 	font-size: 1.7em;
 	font-family: 'Arial', sans-serif;
   text-align: right;
-  padding-top: 0.4em;
+  padding-top: 0.2em;
   margin-bottom: 1.0em;
 }
 
@@ -116,56 +115,40 @@ header {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 200;
 	font-size: 2em;
-	background-color: #3f3f3f;
 	color: #efefef;
-	padding: 0.3em;
 	overflow: hidden;
 }
 
-#title {
-	float: left;
+header #title {
+	padding: 0.1em;
+	background-color: #3f3f3f;
 }
 
-.subtitle.blog {
-  float: left;
+#subtitle {
   color: rgb(213, 79, 255);
 }
 
 nav {
-	float: right;
+	color: #3f3f3f;
+  text-align: right;
 }
 
 nav ul {
-	margin: 0;
-	padding: 0;
-	height: 40px;
+  border-bottom: solid 2px #efefef;
+  margin: 0;
+  padding: 0;
+  line-height: 1.8em;
+  font-size: 0.6em;
 }
 
 nav ul li {
+  border-bottom: solid 2px #efefef;
 	display: inline-block;
-	margin-right: 0.1em;
+	margin: 0 0 -2px;
+  padding: 0 0.4em;
 }
-
-nav ul li a img {
-	vertical-align: middle;
-	opacity: 0.4;
-	height: 35px;
-}
-
-nav ul li:hover a img {
-	transition-duration: 1s;
-	-moz-transition-duration: 1s; /* Firefox 4 */
-	-webkit-transition-duration: 1s; /* Safari and Chrome */
-	-o-transition-duration: 1s; /* Opera */
-	transition-property:opacity;
-	-moz-transition-property:opacity; /* Firefox 4 */
-	-webkit-transition-property:opacity; /* Safari and Chrome */
-	-o-transition-property:opacity; /* Opera */
-	opacity: 0.8;
-}
-
-nav ul a {
-	color: #3f3f3f;
+nav ul li:hover {
+  border-bottom: solid 2px rgb(213, 79, 255);
 }
 
 ol {
@@ -210,7 +193,7 @@ cite {
 	padding: 0 0.3em;
 }
 
-.header-wrap {
+#title .header-wrap{
 	line-height: 2em;
 }
 

@@ -1,19 +1,21 @@
 %header
-  .header-wrap
-    %span{:id => "title"}<
-      #{TITLE} ::&nbsp;
-    %span{:class => "subtitle blog"}<
-      blog
-    %nav
+  #title
+    .header-wrap
+      #{TITLE} ::
+      %span{:id => "subtitle"}<
+        blog
+  %nav
+    .header-wrap
       %ul
         %li
-          %a{:href=>"https://twitter.com/jackiekircher"}
-            %img{:src=>"/images/twitter.png", :alt=>"twitter"}
+          %a{:href=>"https://twitter.com/jackiekircher"}<
+            twitter
         %li
-          %a{:href=>"https://github.com/jackiekircher"}
-            %img{:src=>"/images/github.png", :alt=>"github"}
+          %a{:href=>"https://github.com/jackiekircher"}<
+            github
         %li
-          %a{:href=>"/rss.xml"}
-            %img{:src=>"/images/rss.png", :alt=>"rss"}
+          %a{:href=>"/rss.xml"}<
+            rss
+
 
 
