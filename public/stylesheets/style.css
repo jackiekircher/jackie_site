@@ -133,6 +133,10 @@ nav {
   text-align: right;
 }
 
+nav ul.left-nav {
+  float: left;
+}
+
 nav ul {
   border-bottom: solid 2px #efefef;
   margin: 0;
@@ -195,25 +199,6 @@ cite {
 
 #title .header-wrap{
 	line-height: 2em;
-}
-
-#archive {
-	font-size: 2em;
-	margin: 2em 0;
-}
-
-#archive ul {
-  padding: 0;
-  list-style: none;
-}
-
-#archive li {
-  border-left: solid 2px #efefef;
-  padding-left: 0.4em;
-  margin: 0;
-}
-#archive li:hover {
-  border-left: solid 2px rgb(213, 79, 255);
 }
 
 .prettyprint {
