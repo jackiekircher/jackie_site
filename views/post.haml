@@ -1,8 +1,11 @@
 %h1
+  %span.prefix><
+    \<
   #{@title}
+  %span.suffix><
+    \>
+
 %aside
-  %time
-    #{@formatted_date}
   %p
     jackie bio here.
   %p{:id => "archive"}
@@ -11,6 +14,8 @@
 
 
 %article
+  %time<
+    #{@formatted_date}
   :preserve
     #{@content}
 

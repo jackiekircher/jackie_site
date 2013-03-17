@@ -6,35 +6,41 @@ body {
 }
 
 h1 {
-	font-family: 'BebasRegular', sans-serif;
-	font-size: 4em;
-	color: #58E0C0;
-	text-shadow: 0px 1px 5px #d6d6d6;
+	font-family: 'Arial', sans-serif;
+	font-size: 3.5em;
+  color: #3f3f3f;
 	padding: 0 0.5em;
-	letter-spacing: -0.06em;
-	word-spacing: 0.25em;
-	line-height: 1.1em;
+	letter-spacing: -0.03em;
+	line-height: 1.0em;
 	padding: 0;
+  margin-bottom: 0.2em;
 	display: block;
 	width:100%;
+  text-align: right;
 }
 
 h2 {
-	font-family: 'BebasRegular', sans-serif;
+	font-family: 'Arial', sans-serif;
 	font-size: 2em;	
 	text-shadow: 0px 1px 5px #d6d6d6;
 	margin: 0 0 0.5em 0;
 }
 
 h3 {
-	font-family: 'BebasRegular', sans-serif;
+	font-family: 'Arial', sans-serif;
 	text-shadow: 0px 1px 5px #d6d6d6;	
 }
 
 article {
-	width: 65%;
+	width: 68%;
 	float: right;
 	padding: 0 1em 0 0;
+  margin-bottom: 2em;
+}
+
+span.prefix, span.suffix {
+  color: rgb(213, 79, 255);
+  margin: 0 0.2em;
 }
 
 p, .archive {
@@ -69,14 +75,13 @@ aside {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 200;
 	float: left;
-	width: 30%;
+	width: 27%;
 	padding: 0 0 0 1em;
 }
 
 aside p {
 	font-size: 1.1em;
 	line-height: 1.2em;
-	margin-top: 1em;
 	font-weight: 300;
 }
 
@@ -89,22 +94,24 @@ nav a, nav a:hover{
 a, p a, ol li a, .archive a {
 	text-decoration: none;
 	color: black;
-	border-bottom: solid 1px #58E0C0;
+	border-bottom: solid 1px rgb(213, 79, 255);
 	padding-bottom: 0px;
 }
 
 
 a:hover, p a:hover, ol li a:hover, .archive a:hover{ 
-	border-bottom: dashed 1px #58E0C0;
+	border-bottom: dashed 1px rgb(213, 79, 255);
 }
 
 time {
 	display: block;
-	border-bottom: solid 1px #efefef;
+	border-top: solid 3px #efefef;
 	font-weight: 500;
 	font-size: 1.7em;
-	font-family: 'BebasRegular', sans-serif;
-	word-spacing: 8px;
+	font-family: 'Arial', sans-serif;
+  text-align: right;
+  padding-top: 0.4em;
+  margin-bottom: 1.0em;
 }
 
 time h2 {
@@ -123,6 +130,11 @@ header {
 
 #title {
 	float: left;
+}
+
+.subtitle.blog {
+  float: left;
+  color: rgb(213, 79, 255);
 }
 
 nav {
@@ -185,7 +197,7 @@ blockquote {
 blockquote p:first-child {
 	font-size: 1.2em;
 	padding-bottom: 0.5em;
-	border-bottom: solid 1px #58E0C0;
+	border-bottom: solid 1px rgb(213, 79, 255);
 }
 
 cite {
@@ -198,7 +210,7 @@ cite {
 }
 
 .main-wrap, .header-wrap {
-	max-width: 970px;
+	max-width: 940px;
 	width: 80%;
 	margin: 0 auto;
 	padding: 0 0.3em;
@@ -241,17 +253,6 @@ cite {
 	font-weight: bold;
 }
 
-@font-face {
-    font-family: 'BebasRegular';
-    src: url('../font/BEBAS___-webfont.eot');
-    src: url('../font/BEBAS___-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../font/BEBAS___-webfont.woff') format('woff'),
-         url('../font/BEBAS___-webfont.ttf') format('truetype'),
-         url('../font/BEBAS___-webfont.svg#BebasRegular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
 
 ::selection {
 	background: #B3E8FA; /* Safari */
