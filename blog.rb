@@ -20,6 +20,8 @@ class Blog < Sinatra::Base
         post = post[/posts\/(.*?).md$/,1]
         Post.new(post)
       end
+      # since posts filenames start with the date, this
+      # orders them most recent -> least recent
       posts.sort_by(&:name).reverse
     end
 
@@ -33,20 +35,20 @@ class Blog < Sinatra::Base
   end
 
   get '/' do
-    source = latest_posts.first
+    source   = latest_posts.first
     @content = source.content
-    @title = source.title
-    @date = source.date
+    @title   = source.title
+    @date    = source.date
     @formatted_date = source.formatted_date
 
     haml :post
   end
 
   get '/posts/:id' do
-    source = Post.new(params[:id])
+    source   = Post.new(params[:id])
     @content = source.content
-    @title = source.title
-    @date = source.date
+    @title   = source.title
+    @date    = source.date
     @formatted_date = source.formatted_date
 
     haml :post
