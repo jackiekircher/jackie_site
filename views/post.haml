@@ -1,12 +1,12 @@
 %h1
   #{@title}
+%time<
+  #{@formatted_date}
 
 %aside
   = partial :bio
 
 %article
-  %time<
-    #{@formatted_date}
   :preserve
     #{@content}
 

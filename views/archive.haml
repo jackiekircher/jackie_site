@@ -1,12 +1,10 @@
 %h1
   #{@title}
 %aside
-  %time
-    %h2
-      Archive
-  = partial :bio
+  %h2
+    archives
 
-%article
+%article.archive
   %ul.archive
     - latest_posts.each do |post|
       %li
