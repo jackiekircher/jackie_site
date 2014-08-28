@@ -1,0 +1,3 @@
+[submodule "public/css3_animations"]
+	path = public/css3_animations
+	url = git@github.com:jackiekircher/css3-animations.git
