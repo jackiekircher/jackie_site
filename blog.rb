@@ -25,12 +25,6 @@ class Blog < Sinatra::Base
       posts.sort_by(&:name).reverse
     end
 
-    def css3_animations
-      Dir.glob("public/css3_animations/animations/*").map do |animation|
-        animation.split("/").last
-      end
-    end
-
     def partial(page, options={})
       haml "_#{page}".to_sym, options.merge!(:layout => false)
     end
@@ -66,12 +60,6 @@ class Blog < Sinatra::Base
     haml :archive
   end
 
-  get '/animations' do
-    @animations = css3_animations
-
-    haml :animations
-  end
-
   get '/rss.xml' do
     @posts = latest_posts.first(10)
 
@@ -79,3 +67,5 @@ class Blog < Sinatra::Base
     builder :feed
   end
 end
+
+require_relative 'routes/projects'
