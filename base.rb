@@ -4,7 +4,7 @@ Bundler.require
 require 'date'
 require_relative 'post'
 
-class Blog < Sinatra::Base
+class JackieSite < Sinatra::Base
   TITLE = "jackie kircher"
 
   helpers Sinatra::ContentFor

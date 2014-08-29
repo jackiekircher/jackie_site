@@ -1,4 +1,4 @@
-class Blog < Sinatra::Base
+class JackieSite < Sinatra::Base
 
   helpers do
     def latest_posts
