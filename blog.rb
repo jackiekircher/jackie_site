@@ -26,7 +26,7 @@ class Blog < Sinatra::Base
     end
 
     def css3_animations
-      Dir.glob("public/css3_animations/*").map do |animation|
+      Dir.glob("public/css3_animations/animations/*").map do |animation|
         animation.split("/").last
       end
     end
