@@ -72,21 +72,6 @@ class Blog < Sinatra::Base
     haml :animations
   end
 
-  get '/animations/:id' do
-    animation = params[:id]
-    body = File.read("public/css3_animations/#{animation}/#{animation}.html")
-    new_body = ""
-
-    body.each_line do |line|
-      if line =~ /type="text\/css"/
-        line.gsub!(/href="(.*)\.css"/, 'href="/css3_animations/\1/\1.css"')
-      end
-      new_body << line
-    end
-
-    new_body
-  end
-
   get '/rss.xml' do
     @posts = latest_posts.first(10)
 
