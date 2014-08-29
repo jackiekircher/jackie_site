@@ -1,0 +1,8 @@
+%h1
+  animations
+
+%ul.animations
+  - @animations.each do |name|
+    %li
+      %a{:href => "/animations/#{name}", :title => name, :alt => name}
+        = name

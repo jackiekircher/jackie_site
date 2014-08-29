@@ -25,6 +25,12 @@ class Blog < Sinatra::Base
       posts.sort_by(&:name).reverse
     end
 
+    def css3_animations
+      Dir.glob("public/css3_animations/*").map do |animation|
+        animation.split("/").last
+      end
+    end
+
     def partial(page, options={})
       haml "_#{page}".to_sym, options.merge!(:layout => false)
     end
@@ -58,6 +64,27 @@ class Blog < Sinatra::Base
     @posts = latest_posts
 
     haml :archive
+  end
+
+  get '/animations' do
+    @animations = css3_animations
+
+    haml :animations
+  end
+
+  get '/animations/:id' do
+    animation = params[:id]
+    body = File.read("public/css3_animations/#{animation}/#{animation}.html")
+    new_body = ""
+
+    body.each_line do |line|
+      if line =~ /type="text\/css"/
+        line.gsub!(/href="(.*)\.css"/, 'href="/css3_animations/\1/\1.css"')
+      end
+      new_body << line
+    end
+
+    new_body
   end
 
   get '/rss.xml' do
