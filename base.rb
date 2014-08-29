@@ -5,7 +5,8 @@ require 'date'
 require_relative 'post'
 
 class JackieSite < Sinatra::Base
-  TITLE = "jackie kircher"
+  TITLE    = "jackie kircher"
+  SUBTITLE = "dotcom"
 
   helpers Sinatra::ContentFor
 
@@ -13,6 +14,10 @@ class JackieSite < Sinatra::Base
     def title
       return TITLE if @title.nil?
       "#{TITLE} &raquo; #{@title}"
+    end
+
+    def subtitle
+      @subtitle || SUBTITLE
     end
 
     def partial(page, options={})

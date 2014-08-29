@@ -1,5 +1,9 @@
 class JackieSite < Sinatra::Base
 
+  before '/projects*' do
+    @subtitle = 'projects'
+  end
+
   helpers do
     def css3_animations
       animations = Dir.entries("public/css3_animations/animations")

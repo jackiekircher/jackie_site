@@ -1,5 +1,9 @@
 class JackieSite < Sinatra::Base
 
+  before '/blog*' do
+    @subtitle = 'blog'
+  end
+
   helpers do
     def latest_posts
       posts = Dir.glob("posts/*.md").map do |post|
