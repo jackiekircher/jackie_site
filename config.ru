@@ -1,2 +1,2 @@
-require './blog'
+require './base'
 run Blog
