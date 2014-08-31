@@ -20,6 +20,10 @@ class JackieSite < Sinatra::Base
       @subtitle || SUBTITLE
     end
 
+    def subsection_url
+      url_base + '/' + (@subtitle || '')
+    end
+
     def partial(page, options={})
       haml "_#{page}".to_sym, options.merge!(:layout => false)
     end
