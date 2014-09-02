@@ -4,29 +4,32 @@ $background-light: #f9fff6;
 $background-dark:  #dfdfdf;
 
 body {
-	margin:0;
   background-color: $background-light;
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 300;
+
+	margin: 0;
 }
 
 h1 {
 	font-family: 'Arial', sans-serif;
-	font-size: 3.5em;
-  border-right: solid 6px $accent-color;
-  color: $main-color;
-	padding-right: 28px;
-	letter-spacing: -0.03em;
+  text-align:  right;
 	line-height: 1.0em;
-  margin-bottom: 0;
+	font-size:   3.5em;
+	letter-spacing: -0.03em;
+  color: $main-color;
+
 	display: block;
-  text-align: right;
+	padding-right: 28px;
+  margin-bottom: 0;
+  border-right:  solid 6px $accent-color;
 }
 
 h2 {
 	font-family: 'Arial', sans-serif;
-	font-size: 2em;	
+	font-size:   2em;	
 	text-shadow: 0px 1px 5px #d6d6d6;
+
 	margin: 0 0 0.5em 0;
 }
 
@@ -35,16 +38,18 @@ h3 {
 	text-shadow: 0px 1px 5px #d6d6d6;	
 }
 
+
 article {
-  border-right: solid 6px $accent-color;
 	width: 68%;
+
 	float: right;
 	padding: 0 16px 0 0;
   margin-bottom: 2em;
+  border-right:  solid 6px $accent-color;
 }
 
 span.prefix, span.suffix {
-  color: rgb(213, 79, 255);
+  color:  rgb(213, 79, 255);
   margin: 0 0.2em;
 }
 
@@ -54,20 +59,22 @@ article.archive {
 
 p, .archive {
 	font-family: 'Source Sans Pro', sans-serif;
-	font-size: 1.1em;
+	font-size:   1.1em;
+
 	margin: 0 0 1em 0;
 }
 
 ul.archive {
-	list-style-type: none;
   font-weight: 400;
-	font-size: 2.4em;
-	padding: 0;
-}
+	font-size:   2.4em;
 
-ul.archive .date {
-  font-weight: 300;
-  font-size: 0.6em;
+	padding: 0;
+	list-style-type: none;
+
+  .date {
+    font-weight: 300;
+    font-size:   0.6em;
+  }
 }
 
 .archive li {
@@ -76,8 +83,9 @@ ul.archive .date {
 
 .icon-circle-arrow-right {
 	font-size: 2em;
+
 	float: left;
-	padding-top: 0.3em;
+	padding-top:   0.3em;
 	margin-bottom: 0.8em;
 }
 
@@ -87,22 +95,23 @@ ul.archive .date {
 }
 
 aside {
+	width: 25%;
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 200;
+
 	float: left;
-	width: 25%;
 	padding: 0 0 0 22px;
 }
 
 aside h2 {
-  font-size: 3.1em;
   font-weight: 500;
+  font-size:   3.1em;
 }
 
 aside p {
-	font-size: 1.1em;
 	line-height: 1.2em;
 	font-weight: 300;
+	font-size:   1.1em;
 }
 
 
@@ -124,12 +133,14 @@ header #title a {
   color: $accent-color;
 }
 
+
 time {
-	display: block;
-	font-weight: 500;
-	font-size: 1.7em;
 	font-family: 'Arial', sans-serif;
-  text-align: right;
+  text-align:  right;
+	font-weight: 500;
+	font-size:   1.7em;
+
+	display: block;
   padding: 0.2em 12px 1.5em 0;
   border-right: solid 6px $accent-color;
 }
@@ -140,7 +151,7 @@ time h2 {
 
 header {
 	font-family: 'Source Sans Pro', sans-serif;
-	font-size: 2.5em;
+	font-size:   2.5em;
 	color: $background-light;
 	overflow: hidden;
 }
@@ -154,32 +165,38 @@ header #title {
   color: $accent-color;
 }
 
+
 nav {
-	color: $main-color;
   text-align: right;
+	color: $main-color;
+
+  ul {
+    line-height: 1.8em;
+    font-size:   0.6em;
+
+    padding: 0;
+    margin:  0;
+    border-bottom: solid 2px $background-dark;
+
+    li {
+      display: inline-block;
+      padding: 0 0.4em;
+      margin:  0 0 -2px;
+
+      position: relative;
+      top: 1px;
+      border-bottom: solid 2px $background-dark;
+
+      &:hover {
+        border-bottom: solid 2px $accent-color;
+      }
+    }
+  }
+  ul.left-nav {
+    float: left;
+  }
 }
 
-nav ul.left-nav {
-  float: left;
-}
-
-nav ul {
-  border-bottom: solid 2px $background-dark;
-  margin: 0;
-  padding: 0;
-  line-height: 1.8em;
-  font-size: 0.6em;
-}
-
-nav ul li {
-  border-bottom: solid 2px $background-dark;
-	display: inline-block;
-	margin: 0 0 -2px;
-  padding: 0 0.4em;
-}
-nav ul li:hover {
-  border-bottom: solid 2px $accent-color;
-}
 
 ol {
 	font-family: 'Source Sans Pro', sans-serif;
@@ -208,8 +225,8 @@ blockquote p:first-child {
 }
 
 cite {
-	font-style: normal;
 	font-family: 'Source Sans Pro', sans-serif;
+	font-style:  normal;
 }
 
 .citation {
@@ -217,10 +234,11 @@ cite {
 }
 
 .main-wrap, .header-wrap {
+	width:     80%;
 	max-width: 940px;
-	width: 80%;
-	margin: 0 auto;
+
 	padding: 0 0.3em;
+	margin:  0 auto;
 }
 
 #title .header-wrap{
@@ -237,18 +255,18 @@ cite {
 }
 
 .image img {
-	max-width: 100%;
+	max-width:  100%;
 	box-shadow: 1px 1px 10px rgba(50, 50, 50, 0.5);
 }
 
 .center {
 	display: block;
-	margin: 0 auto;
+	margin:  0 auto;
 }
 
 .caption {
-	font-size: 0.8em;
 	font-weight: bold;
+	font-size:   0.8em;
 }
 
 
@@ -262,11 +280,12 @@ cite {
 
 /* Youtube hax */
 .youtube_frame {
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	width: 100%;
+	width:  100%;
 	height: 100%;
+
+	position: absolute;
+	top:  0px;
+	left: 0px;
 }
 
 .youtube_resize img {
@@ -274,9 +293,10 @@ cite {
 }
 
 .youtube_resize {
-	position: relative;
 	width: 100%;
-	margin: 1em;
+
+	position: relative;
+	margin:   1em;
 	box-shadow: 1px 1px 10px rgba(50, 50, 50, 0.5);
 }
 
@@ -285,26 +305,27 @@ cite {
 
 @media screen and (max-width: 855px) {
 	p {
-		font-size: 1.2em;
 		font-weight: 300;
+		font-size:   1.2em;
 	}
 
 	article {
-		float: none;
 		width: auto;
+		float: none;
 		padding: 1em;
 	}	
 
 	aside {
-		float: none;
 		width: auto;
+		float: none;
 		padding: 1em;
 	}
 
 	#title {
-		display: block;
 		text-align: center;
-		float: none;
+
+		display: block;
+		float:   none;
 	}
 
 	nav {
