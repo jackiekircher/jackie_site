@@ -11,6 +11,10 @@ class JackieSite < Sinatra::Base
     end
   end
 
+  get '/projects' do
+    haml :projects
+  end
+
   get '/projects/css3-animations' do
     @animations = css3_animations
 
