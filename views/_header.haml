@@ -1,10 +1,10 @@
 %header
   #title
     .header-wrap<
-      %a{:href=> section_path(subtitle)}<
+      %a{:href=> section_path}<
         #{TITLE} ::
         %span{:id => "subtitle"}<
-          = subtitle
+          = @subtitle
 
       %nav{:id => "sections"}
         ~ "select &nbsp;▾"
@@ -17,7 +17,7 @@
   %nav{:id => "pages"}
     .header-wrap
       %ul.left-nav
-        = partial "#{subtitle}_left_nav"
+        = partial "#{@subtitle}_left_nav"
 
       %ul.right-nav
         %li

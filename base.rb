@@ -24,12 +24,8 @@ class JackieSite < Sinatra::Base
       "#{TITLE} &raquo; #{@title}"
     end
 
-    def subtitle
-      @subtitle || SUBTITLE
-    end
-
-    def section_path(subtitle)
-      SECTIONS[subtitle][:path]
+    def section_path
+      SECTIONS[@subtitle][:path]
     end
 
     def partial(page, options={})
@@ -39,6 +35,11 @@ class JackieSite < Sinatra::Base
     def url_base
       "http://#{request.host_with_port}"
     end
+  end
+
+  # set default subtitle, this is overriden in most sections
+  before do
+    @subtitle = SUBTITLE
   end
 
 end
