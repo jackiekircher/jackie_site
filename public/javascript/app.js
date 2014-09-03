@@ -13,4 +13,4 @@ $(document).ready(function(){
 });
 
 
-$("h1").fitText(0.8, { minFontSize: '20px', maxFontSize: '80px' });
+$("h1").fitText(0.8, { minFontSize: '20px', maxFontSize: '60px' });

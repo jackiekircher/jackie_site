@@ -1,0 +1,67 @@
+@import 'colors';
+
+.projects {
+  margin-bottom: 2em;
+}
+
+.projects h1 {
+  padding-bottom: 1.5em;
+}
+
+section.project {
+  text-align: left;
+  max-width: 68%;
+  float: right;
+
+  padding: 0 2em 4em;
+  border-right: solid 6px $complement-color-d1;
+
+  header {
+    color: $primary-color-l1;
+    text-align: right;
+    margin-bottom: 0.5em;
+  }
+
+  h2 {
+    font-size: 1.1em;
+    margin: 0;
+  }
+
+  .project-link {
+    line-height: 0.7em;
+
+    a {
+      font-size: 0.7em;
+      color: $complement-color-d1;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+ul.tools {
+  list-style: none;
+  color:   #a0a0a0;
+
+  float: right;
+  position: relative;
+  top: 2px;
+  padding: 1.5em 0 0;
+  margin:  0;
+
+  li {
+    font-size: 1em;
+    display: inline;
+    padding: 0.5em 0 0 1em;
+    border-top: solid 2px $background-dark;
+  }
+}
+section.even {
+  border-color: $complement-color;
+}
