@@ -13,7 +13,9 @@ class JackieSite < Sinatra::Base
                "blog"     => { :path  => "/blog",
                                :label =>  "blog" },
                "projects" => { :path  => "/projects",
-                               :label =>  "projects" }
+                               :label =>  "projects" },
+               "hire"     => { :path  => "/hire",
+                               :label =>  "hire" }
               }
 
   helpers Sinatra::ContentFor
@@ -50,3 +52,4 @@ end
 
 require_relative 'blog'
 require_relative 'projects'
+require_relative 'hire'
