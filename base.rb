@@ -7,6 +7,14 @@ require_relative 'post'
 class JackieSite < Sinatra::Base
   TITLE    = "jackie kircher"
   SUBTITLE = "dotcom"
+  SECTIONS = {
+               SUBTITLE   => { :path  => "/",
+                               :label =>  ".." },
+               "blog"     => { :path  => "/blog",
+                               :label =>  "blog" },
+               "projects" => { :path  => "/projects",
+                               :label =>  "projects" }
+              }
 
   helpers Sinatra::ContentFor
 
@@ -20,8 +28,8 @@ class JackieSite < Sinatra::Base
       @subtitle || SUBTITLE
     end
 
-    def subsection_url
-      url_base + '/' + (@subtitle || '')
+    def section_path(subtitle)
+      SECTIONS[subtitle][:path]
     end
 
     def partial(page, options={})

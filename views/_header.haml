@@ -1,7 +1,7 @@
 %header
   #title
     .header-wrap<
-      %a{:href=> subsection_url}<
+      %a{:href=> section_path(subtitle)}<
         #{TITLE} ::
         %span{:id => "subtitle"}<
           = subtitle
@@ -9,15 +9,10 @@
       %nav{:id => "sections"}
         ~ "select &nbsp;▾"
         %ul.sections-nav
-          %li
-            %a{:href => "/" }
-              \..
-          %li
-            %a{:href => "/blog"}
-              blog
-          %li
-            %a{:href => "/projects"}
-              projects
+          - SECTIONS.each do |subtitle, info|
+            %li
+              %a{:href => info[:path] }
+                = info[:label]
 
   %nav{:id => "pages"}
     .header-wrap
