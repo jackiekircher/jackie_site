@@ -5,7 +5,21 @@
         #{TITLE} ::
         %span{:id => "subtitle"}<
           = subtitle
-  %nav
+
+      %nav{:id => "sections"}
+        ~ "select &nbsp;▾"
+        %ul.sections-nav
+          %li
+            %a{:href => "/" }
+              \..
+          %li
+            %a{:href => "/blog"}
+              blog
+          %li
+            %a{:href => "/projects"}
+              projects
+
+  %nav{:id => "pages"}
     .header-wrap
       %ul.left-nav
         = partial "#{subtitle}_left_nav"

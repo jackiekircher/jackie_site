@@ -1,5 +1,6 @@
 $background-light: #f9fff8;
 $background-dark:  #dfdfdf;
+$top-index: 100;
 
 /*
  * Palette URL: http://paletton.com/#uid=a3u340krgCWg5NMlWHuA8wiAznX
@@ -177,22 +178,68 @@ time h2 {
 
 header {
 	font-family: 'Source Sans Pro', sans-serif;
+  text-align:  left;
 	font-size:   2.5em;
 	color: $background-light;
-	overflow: hidden;
 }
 
 header #title {
 	padding: 0.2em;
 	background-color: $primary-color;
+  border-bottom: solid 4px $primary-color-l2;
 }
 
 #subtitle {
   color: $complement-color-l2;
 }
 
+nav#sections {
+  width:  10em;
+  height: 1em;
+  text-align:  left;
+  line-height: 0.4em;
+  font-size:   0.4em;
 
-nav {
+  display:  block;
+  position: relative;
+  top: -3px;
+  left: 249px;
+  margin-bottom: 0.5em;
+
+  ul {
+    width: 4em;
+    list-style: none;
+    line-height: 1em;
+    font-size:   1.5em;
+    background-color: $primary-color;
+
+    display:  none;
+    position: relative;
+    top: 4px;
+    padding: 0.5em 1em 0;
+    margin:  0 1em;
+    border-bottom: solid 4px $primary-color-l2;
+    z-index: $top-index;
+
+    &:hover {
+      display: block;
+    }
+
+    a:hover {
+      color: $complement-color-l2;
+    }
+
+    li {
+      width: auto;
+    }
+  }
+}
+nav#sections:hover ul {
+  display: block;
+}
+
+
+nav#pages {
   text-align: right;
 	color: $primary-color;
 
