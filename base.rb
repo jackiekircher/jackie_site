@@ -42,6 +42,10 @@ class JackieSite < Sinatra::Base
     @subtitle = SUBTITLE
   end
 
+  get '/' do
+    haml :index
+  end
+
 end
 
 require_relative 'blog'
