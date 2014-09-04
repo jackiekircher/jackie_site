@@ -1,10 +1,6 @@
 @import 'colors';
 
-.projects {
-  margin-bottom: 2em;
-}
-
-.projects h1 {
+h1.section-title {
   padding-bottom: 1.5em;
 }
 
@@ -29,14 +25,14 @@ section.project {
 
   .project-link {
     line-height: 0.7em;
+    font-size:   0.7em;
+  }
 
-    a {
-      font-size: 0.7em;
-      color: $complement-color-d1;
+  a {
+    color: $complement-color-d1;
 
-      &:hover {
-        text-decoration: underline;
-      }
+    &:hover {
+      text-decoration: underline;
     }
   }
 
@@ -64,4 +60,7 @@ ul.tools {
 }
 section.even {
   border-color: $complement-color;
+}
+section.last {
+  margin-bottom: 2em;
 }
