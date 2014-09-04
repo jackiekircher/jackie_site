@@ -34,6 +34,11 @@ class JackieSite < Sinatra::Base
       haml "_#{page}".to_sym, options.merge!(:layout => false)
     end
 
+    def optional_partial(page, options={})
+      file = settings.views + "/_" + page + ".haml"
+      partial(page, options) if File.exists?(file)
+    end
+
     def url_base
       "http://#{request.host_with_port}"
     end

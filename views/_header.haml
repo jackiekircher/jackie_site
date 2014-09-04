@@ -17,7 +17,7 @@
   %nav{:id => "pages"}
     .header-wrap
       %ul.left-nav
-        = partial "#{@subtitle}_left_nav"
+        = optional_partial "#{@subtitle}_left_nav"
 
       %ul.right-nav
         %li
@@ -29,9 +29,6 @@
         %li
           %a{:href=>"https://github.com/jackiekircher"}<
             github
-        %li
-          %a{:href=>"/blog/rss.xml"}<
-            rss
 
 
 
