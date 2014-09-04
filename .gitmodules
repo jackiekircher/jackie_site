@@ -1,3 +1,6 @@
 [submodule "public/css3_animations"]
 	path = public/css3_animations
 	url = git@github.com:jackiekircher/css3-animations.git
+[submodule "hire/resume"]
+	path = hire/resume
+	url = https://github.com/jackiekircher/resume.git
