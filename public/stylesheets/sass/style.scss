@@ -120,16 +120,33 @@ nav a, nav a:hover{
 
 a, p a, ol li a, .archive a {
 	text-decoration: none;
-	color: black;
+	color: $complement-color-d1;
 	padding-bottom: 0px;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 header #title a {
   color: white;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
-.archive a:hover {
-  color: $complement-color;
+nav a:hover {
+  text-decoration: none;
+}
+
+.archive a {
+  color: black;
+
+  &:hover {
+    text-decoration: none;
+    color: $complement-color;
+  }
 }
 
 
