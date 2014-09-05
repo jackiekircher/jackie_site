@@ -7,7 +7,7 @@ class JackieSite < Sinatra::Base
   get '/hire' do
     @resume = File.read("hire/resume/resume.md")
 
-    renderer = Post::Renderer.new("resume")
+    renderer = Site::Renderer.new("resume")
     r = Redcarpet::Markdown.new(renderer, :fenced_code_blocks => true, :tables => true)
     @resume = r.render(@resume)
 

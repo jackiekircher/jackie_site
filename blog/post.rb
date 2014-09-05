@@ -1,23 +1,6 @@
 require 'yaml'
 require 'date'
 
-class Post
-  class Renderer < Redcarpet::Render::HTML
-
-    def initialize(slug, *args)
-      @slug = slug
-      super *args
-    end
-
-    def image(link, title, alt_text)
-      unless link.match /^http|^\//
-        link = "/images/#{@slug}/#{link}"
-      end
-      "</p><p class='image'><img src='#{link}' title='#{title}' alt='#{alt_text}' /><br /><span class='caption'>#{alt_text}</span>"
-    end
-
-  end
-end
 
 class Post
   attr_reader :name
@@ -28,7 +11,7 @@ class Post
   def initialize(name)
     @name = name
     begin
-      content = File.read("posts/#{name}.md")
+      content = File.read("blog/posts/#{name}.md")
     rescue
       return
     end
@@ -54,7 +37,7 @@ class Post
 
   def content
     @content ||= begin
-      renderer = Post::Renderer.new(@slug)
+      renderer = Site::Renderer.new(@slug)
       r = Redcarpet::Markdown.new(renderer, :fenced_code_blocks => true)
       r.render(@content_raw)
     end

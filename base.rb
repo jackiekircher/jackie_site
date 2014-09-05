@@ -1,9 +1,6 @@
 require 'bundler'
 Bundler.require
 
-require 'date'
-require_relative 'post'
-
 class JackieSite < Sinatra::Base
   TITLE    = "jackie kircher"
   SUBTITLE = "dotcom"
@@ -54,6 +51,8 @@ class JackieSite < Sinatra::Base
   end
 
 end
+
+require_relative 'renderer'
 
 require_relative 'blog'
 require_relative 'projects'

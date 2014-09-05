@@ -1,3 +1,5 @@
+require_relative 'blog/post'
+
 class JackieSite < Sinatra::Base
 
   before '/blog*' do
@@ -6,8 +8,8 @@ class JackieSite < Sinatra::Base
 
   helpers do
     def latest_posts
-      posts = Dir.glob("posts/*.md").map do |post|
-        post = post[/posts\/(.*?).md$/,1]
+      posts = Dir.glob("blog/posts/*.md").map do |post|
+        post = post[/blog\/posts\/(.*?).md$/,1]
         Post.new(post)
       end
       # since posts filenames start with the date, this
