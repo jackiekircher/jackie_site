@@ -1,14 +1,20 @@
+- content_for :header do
+  %style{:name => "animation"}
+
 %h1.section-title
-  animations
+  css3 animations
 
 %article
 
-  %div.animation
+  %div.animation-container
     %p
       click an animation on the right to load it here
 
   %ul.right.large
     - @animations.each do |name|
       %li
-        %a{:href => "/css3_animations/animations/#{name}/#{name}.html", :title => name, :alt => name}
+        %a.load-animation{:href => "/css3_animations/animations/#{name}/#{name}.html"}
           = name
+
+- content_for :javascript do
+  %script{:src=>"/javascript/css3-animations.js"}

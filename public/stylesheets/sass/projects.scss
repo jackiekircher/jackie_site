@@ -1,7 +1,9 @@
 @import 'colors';
 
 h1.section-title {
+  text-align: right;
   padding-bottom: 1.5em;
+  margin: 1em 0 0;
 }
 
 section.project {
@@ -57,9 +59,10 @@ section.last {
   margin-bottom: 2em;
 }
 
-.animation {
+.animation-container {
   height: 360px;
   width:  360px;
+  background-color: $background-light;
 
   float: left;
   position: absolute;
