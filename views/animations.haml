@@ -1,8 +1,14 @@
-%h1
+%h1.section-title
   animations
 
-%ul.animations
-  - @animations.each do |name|
-    %li
-      %a{:href => "/css3_animations/animations/#{name}/#{name}.html", :title => name, :alt => name}
-        = name
+%article
+
+  %div.animation
+    %p
+      click an animation on the right to load it here
+
+  %ul.right.large
+    - @animations.each do |name|
+      %li
+        %a{:href => "/css3_animations/animations/#{name}/#{name}.html", :title => name, :alt => name}
+          = name

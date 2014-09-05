@@ -56,3 +56,18 @@ section.even {
 section.last {
   margin-bottom: 2em;
 }
+
+.animation {
+  height: 360px;
+  width:  360px;
+
+  float: left;
+  position: absolute;
+  left: 5em;
+  border: solid 4px $primary-color-l2;
+
+  p {
+    text-align: center;
+    margin: 170px auto;
+  }
+}
