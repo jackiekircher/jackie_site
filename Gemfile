@@ -1,7 +1,7 @@
-source :rubygems
+ruby '2.1.1'
+source 'https://rubygems.org'
 
 gem 'sinatra'
-gem 'sinatra-subdomain'
 gem 'sinatra-contrib', :require => 'sinatra/content_for'
 
 gem 'thin'
