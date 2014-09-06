@@ -82,3 +82,12 @@ section.last {
   left: -140px;
   margin-bottom: 3em;
 }
+
+a.loaded {
+  font-weight: bold;
+  color: initial;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
