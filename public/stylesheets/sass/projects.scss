@@ -67,6 +67,7 @@ section.last {
   float: left;
   position: absolute;
   left: 5em;
+  margin-bottom: 8em;
   border: solid 4px $primary-color-l2;
 
   p {
@@ -80,7 +81,6 @@ section.last {
   float: left;
   top:   360px;
   left: -140px;
-  margin-bottom: 3em;
 }
 
 a.loaded {
