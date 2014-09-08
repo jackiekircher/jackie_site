@@ -59,28 +59,27 @@ section.last {
   margin-bottom: 2em;
 }
 
+figure {
+  float: left;
+  position: absolute;
+  left: 5em;
+  margin: 0 0 6em;
+
+  figcaption {
+    margin-top: -0.5em;
+  }
+}
+
 .animation-container {
   height: 360px;
   width:  360px;
   background-color: $background-light;
-
-  float: left;
-  position: absolute;
-  left: 5em;
-  margin-bottom: 8em;
   border: solid 4px $primary-color-l2;
 
   p {
     text-align: center;
     margin: 170px auto;
   }
-}
-
-.caption {
-  position: relative;
-  float: left;
-  top:   360px;
-  left: -140px;
 }
 
 a.loaded {
