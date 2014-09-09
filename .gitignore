@@ -1,2 +1,4 @@
 .sass-cache/**
 public/stylesheets/*.map
+public/stylesheets/style.css
+public/stylesheets/projects.css
