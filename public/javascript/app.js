@@ -14,3 +14,17 @@ $(document).ready(function(){
 
 
 $("h1").fitText(0.8, { minFontSize: '20px', maxFontSize: '60px' });
+
+$(window).on('resize', hideEmptyNav);
+
+
+function hideEmptyNav() {
+  $pageNav = $('ul.page-nav');
+  if ($pageNav.html().trim()) { return; }
+
+  if ($(this).width() < 720) {
+    $pageNav.hide();
+  } else {
+    $pageNav.show();
+  };
+}
