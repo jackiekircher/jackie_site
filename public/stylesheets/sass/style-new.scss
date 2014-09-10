@@ -17,6 +17,7 @@ h1 {
 	font-size:   3.5em;
 	letter-spacing: -0.03em;
   color: $primary-color-d1;
+  margin-bottom: 0;
 }
 
 h2 {
@@ -125,6 +126,9 @@ time {
   text-align:  right;
 	font-weight: 500;
 	font-size:   1.7em;
+
+  display: block;
+  padding: 0.2em 0 1.5em;
 }
 
 time h2 {
@@ -342,8 +346,8 @@ cite {
 
   h1 {
     display: block;
-    padding-right: 28px;
-    margin: 1em 0 0;
+    padding-right: 0.4em;
+    margin: 1.5em 0 0;
     border-right:  solid 6px $complement-color-l1;
   }
 
@@ -355,7 +359,7 @@ cite {
     width: 68%;
 
     float: right;
-    padding: 0 16px 0 0;
+    padding: 0 1.3em 0 0;
     margin-bottom: 2em;
     border-right:  solid 6px $complement-color-l1;
   }
@@ -367,8 +371,7 @@ cite {
   }
 
   time {
-    display: block;
-    padding: 0.2em 28px 1.5em 0;
+    padding-right: 1em;
     border-right: solid 6px $complement-color-l1;
   }
 
