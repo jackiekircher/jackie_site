@@ -7,11 +7,9 @@ h1.section-title {
 
 section.project {
   text-align: left;
-  max-width: 68%;
   float: right;
 
   padding: 0 2em 4em;
-  border-right: solid 6px $complement-color-d1;
 
   header {
     color: $primary-color-l1;
@@ -25,7 +23,8 @@ section.project {
   }
 
   .project-link {
-    line-height: 0.7em;
+    word-wrap: break-word;
+    line-height: 1.0em;
     font-size:   0.7em;
   }
 
@@ -33,29 +32,28 @@ section.project {
     margin: 0;
   }
 }
+section.last {
+  margin-bottom: 2em;
+}
 
 ul.tools {
   list-style: none;
   color:   #a0a0a0;
+  text-align: right;
 
   float: right;
   position: relative;
   top: 2px;
-  padding: 1.5em 0 0;
-  margin:  0;
+  padding: 0.5em 0 0;
+  margin:  1em 0 0;
+  border-top: solid 2px $background-dark;
 
   li {
     font-size: 1em;
-    display: inline;
+    display: inline-block;
     padding: 0.5em 0 0 1em;
-    border-top: solid 2px $background-dark;
+    line-height: 1.5em;
   }
-}
-section.even {
-  border-color: $complement-color;
-}
-section.last {
-  margin-bottom: 2em;
 }
 
 figure {
@@ -88,5 +86,23 @@ a.loaded {
 
   &:hover {
     text-decoration: none;
+  }
+}
+
+/* old layout works fine right here */
+@media screen and (min-width: 720px) {
+  figure {
+    margin-right: 2em;
+  }
+
+  section.project {
+    max-width: 68%;
+    float: right;
+
+    padding: 0 2em 4em;
+    border-right: solid 6px $complement-color-d1;
+  }
+  section.even {
+    border-color: $complement-color;
   }
 }
