@@ -58,25 +58,36 @@ ul.tools {
 
 figure {
   position: relative;
-  width:  360px;
-  margin: 0 auto 2em;
+  max-width:  360px;
+  min-width:  250px;
+  margin: 0 auto;
 
   figcaption {
-    margin-top: -0.5em;
+    width: 80%;
+    height: 90px;
+    text-align: center;
+    margin: 1em auto 0;
   }
 }
 
 .animation-container {
-  height: 360px;
-  width:  100%;
+  width:   100%;
+  height:  0;
+  padding: 50% 0;
 
+  position: relative;
+  left: -4px;
   background-color: $background-light;
   border: solid 4px $primary-color-l2;
 
   p {
     text-align: center;
     max-width:  300px;
-    margin: 170px auto;
+    margin: 0 auto;
+  }
+
+  #animation {
+    margin: -25% auto;
   }
 }
 
@@ -89,10 +100,11 @@ a.loaded {
   }
 }
 
-/* title fits on one line */
+
+/* hardset the right margin for the animation continaer */
 @media screen and (min-width: 440px) {
   figure {
-    margin: 0 1em 2em auto;
+    margin: 0 1em 0 auto;
   }
 }
 
@@ -118,6 +130,7 @@ a.loaded {
 /* list names and figure can sit side-by-side */
 @media screen and (min-width: 950px) {
   figure {
+    width: 360px;
     float: left;
     position: absolute;
     left: 5em;
