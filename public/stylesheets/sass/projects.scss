@@ -57,10 +57,9 @@ ul.tools {
 }
 
 figure {
-  float: left;
-  position: absolute;
-  left: 5em;
-  margin: 0 0 6em;
+  position: relative;
+  width:  360px;
+  margin: 0 auto 2em;
 
   figcaption {
     margin-top: -0.5em;
@@ -69,7 +68,8 @@ figure {
 
 .animation-container {
   height: 360px;
-  width:  360px;
+  width:  100%;
+
   background-color: $background-light;
   border: solid 4px $primary-color-l2;
 
@@ -89,7 +89,15 @@ a.loaded {
   }
 }
 
+/* title fits on one line */
+@media screen and (min-width: 440px) {
+  figure {
+    margin: 0 1em 2em auto;
+  }
+}
+
 /* old layout works fine right here */
+/* fix the figure in a position relative to the list */
 @media screen and (min-width: 720px) {
   figure {
     margin-right: 2em;
@@ -104,5 +112,15 @@ a.loaded {
   }
   section.even {
     border-color: $complement-color;
+  }
+}
+
+/* list names and figure can sit side-by-side */
+@media screen and (min-width: 950px) {
+  figure {
+    float: left;
+    position: absolute;
+    left: 5em;
+    margin: 0 0 6em;
   }
 }
