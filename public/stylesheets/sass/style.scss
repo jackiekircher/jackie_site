@@ -1,51 +1,34 @@
 @import 'colors';
 $top-index: 100;
 
-
 body {
   background-color: $background-light;
-	font-family: 'Source Sans Pro', sans-serif;
-	font-weight: 300;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  font-size:   14px;
 
-	margin: 0;
+  margin: 0;
 }
 
 h1 {
-	font-family: 'Arial', sans-serif;
+  font-family: 'Arial', sans-serif;
   text-align:  right;
-	line-height: 1.0em;
-	font-size:   3.5em;
-	letter-spacing: -0.03em;
+  line-height: 1.0em;
+  font-size:   3.5em;
+  letter-spacing: -0.03em;
   color: $primary-color-d1;
-
-	display: block;
-	padding-right: 28px;
-  margin: 1em 0 0;
-  border-right:  solid 6px $complement-color-l1;
+  margin-bottom: 0;
 }
 
 h2 {
-	font-family: 'Arial', sans-serif;
-	font-size:   2em;	
-	text-shadow: 0px 1px 5px #d6d6d6;
-
-	margin: 0 0 0.5em 0;
+  font-family: 'Arial', sans-serif;
+  font-size:   2em;
 }
 
 h3 {
-	font-family: 'Arial', sans-serif;
-	text-shadow: 0px 1px 5px #d6d6d6;	
+  font-family: 'Arial', sans-serif;
 }
 
-
-article {
-	width: 68%;
-
-	float: right;
-	padding: 0 16px 0 0;
-  margin-bottom: 2em;
-  border-right:  solid 6px $complement-color-l1;
-}
 
 span.prefix, span.suffix {
   color:  rgb(213, 79, 255);
@@ -57,18 +40,18 @@ article.archive {
 }
 
 p, .archive {
-	font-family: 'Source Sans Pro', sans-serif;
-	font-size:   1.1em;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size:   1.1em;
 
-	margin: 0 0 1em 0;
+  margin: 0 0 1em 0;
 }
 
 ul.archive {
   font-weight: 400;
-	font-size:   2.4em;
+  font-size:   2.4em;
 
-	padding: 0;
-	list-style-type: none;
+  padding: 0;
+  list-style-type: none;
 
   .date {
     font-weight: 300;
@@ -77,29 +60,17 @@ ul.archive {
 }
 
 .archive li {
-	margin-bottom: 0.8em;
-}
-
-.icon-circle-arrow-right {
-	font-size: 2em;
-
-	float: left;
-	padding-top:   0.3em;
-	margin-bottom: 0.8em;
+  margin-bottom: 0.8em;
 }
 
 .date {
-	font-size: 0.8em;
-	color: #818181;
+  font-size: 0.8em;
+  color: #818181;
 }
 
 aside {
-	width: 25%;
-	font-family: 'Source Sans Pro', sans-serif;
-	font-weight: 200;
-
-	float: left;
-	padding: 0 0 0 22px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 200;
 }
 
 aside h2 {
@@ -108,20 +79,20 @@ aside h2 {
 }
 
 aside p {
-	line-height: 1.2em;
-	font-weight: 300;
-	font-size:   1.1em;
+  line-height: 1.2em;
+  font-weight: 300;
+  font-size:   1.1em;
 }
 
 
 nav a, nav a:hover{
-	border-bottom:none;
+  border-bottom:none;
 }
 
 a, p a, ol li a, .archive a {
-	text-decoration: none;
-	color: $complement-color-d1;
-	padding-bottom: 0px;
+  text-decoration: none;
+  color: $complement-color-d1;
+  padding-bottom: 0px;
 
   &:hover {
     text-decoration: underline;
@@ -151,30 +122,29 @@ nav a:hover {
 
 
 time {
-	font-family: 'Arial', sans-serif;
+  font-family: 'Arial', sans-serif;
   text-align:  right;
-	font-weight: 500;
-	font-size:   1.7em;
+  font-weight: 500;
+  font-size:   1.7em;
 
-	display: block;
-  padding: 0.2em 28px 1.5em 0;
-  border-right: solid 6px $complement-color-l1;
+  display: block;
+  padding: 0.2em 0 1.5em;
 }
 
 time h2 {
-	margin: 0;
+  margin: 0;
 }
 
 header {
-	font-family: 'Source Sans Pro', sans-serif;
-  text-align:  left;
-	font-size:   2.5em;
-	color: $background-light;
+  font-family: 'Source Sans Pro', sans-serif;
+  text-align:  center;
+  font-size:   2.5em;
+  color: $background-light;
 }
 
 header #title {
-	padding: 0.2em;
-	background-color: $primary-color;
+  padding: 0.2em;
+  background-color: $primary-color;
   border-bottom: solid 4px $primary-color-l2;
 }
 
@@ -183,7 +153,7 @@ header #title {
 }
 
 nav#sections {
-  width:  10em;
+  width:  4em;
   height: 1em;
   text-align:  left;
   line-height: 0.4em;
@@ -191,9 +161,7 @@ nav#sections {
 
   display:  block;
   position: relative;
-  top: -3px;
-  left: 249px;
-  margin-bottom: 0.5em;
+  margin: 1em auto 0.5em;
 
   ul {
     width: 4em;
@@ -229,10 +197,12 @@ nav#sections:hover ul {
 
 
 nav#pages {
-  text-align: right;
-	color: $primary-color;
+  text-align: center;
+  color: $primary-color;
 
   ul {
+    width:  100%;
+    height: 1.8em;
     line-height: 1.8em;
     font-size:   0.6em;
 
@@ -243,10 +213,9 @@ nav#pages {
     li {
       display: inline-block;
       padding: 0 0.4em;
-      margin:  0 0 -2px;
+      margin:  0;
 
       position: relative;
-      top: 1px;
       border-bottom: solid 2px $background-dark;
 
       &:hover {
@@ -254,46 +223,43 @@ nav#pages {
       }
     }
   }
-  ul.left-nav {
-    float: left;
-  }
 }
 
 
 ol {
-	font-family: 'Source Sans Pro', sans-serif;
-	font-weight: 200;	
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 200;  
 }
 
 ul {
   list-style: none;
-	padding:    0 3em;
+  padding:    0 3em;
 }
 
 li {
-	font-size: 1.1em;
-	margin-bottom: 0.5em;
+  font-size: 1.1em;
+  margin-bottom: 0.5em;
 }
 
 blockquote {
-	background-image: url('../images/quotebg.png');
-	background-repeat: no-repeat;
-	padding: 20px 0 0 50px;
+  background-image: url('../images/quotebg.png');
+  background-repeat: no-repeat;
+  padding: 2em 0 0 5em;
 }
 
 blockquote p:first-child {
-	font-size: 1.2em;
-	padding-bottom: 0.5em;
-	border-bottom: solid 1px rgb(213, 79, 255);
+  font-size: 1.2em;
+  padding-bottom: 0.5em;
+  border-bottom: solid 1px $primary-color-l2;
 }
 
 cite {
-	font-family: 'Source Sans Pro', sans-serif;
-	font-style:  normal;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-style:  normal;
 }
 
 .citation {
-	text-align: right;
+  text-align: right;
 }
 
 
@@ -314,111 +280,118 @@ cite {
 
 
 .main-wrap, .header-wrap {
-	width:     80%;
-	max-width: 940px;
-
+  width:     80%;
+  max-width: 940px;
   position: relative;
-	padding:  0;
-	margin:   0 auto;
+  padding:  0;
+  margin:   0 auto;
 }
 
 #title .header-wrap{
-	line-height: 1.8em;
+  line-height: 1.0em;
+  margin:      0.4em auto;
 }
 
 .prettyprint {
-	overflow-x: auto;
-	padding: 10px;
+  overflow-x: auto;
+  padding: 1em;
 }
 
 .image {
-	text-align: center;
+  text-align: center;
 }
 
 .image img {
-	max-width:  100%;
-	box-shadow: 1px 1px 10px rgba(50, 50, 50, 0.5);
+  max-width:  100%;
 }
 
 .center {
-	display: block;
-	margin:  0 auto;
+  display: block;
+  margin:  0 auto;
 }
 
 .caption {
-	font-weight: bold;
-	font-size:   0.8em;
+  font-weight: bold;
+  font-size:   0.8em;
 }
 
 
 ::selection {
-	background: #B3E8FA; /* Safari */
+  background: #B3E8FA; /* Safari */
 }
 ::-moz-selection {
-	background: #B3E8FA; /* Firefox */
+  background: #B3E8FA; /* Firefox */
 }
 
-
-/* Youtube hax */
-.youtube_frame {
-	width:  100%;
-	height: 100%;
-
-	position: absolute;
-	top:  0px;
-	left: 0px;
+/* title fits on one line */
+@media screen and (min-width: 440px) {
+  header {
+    text-align: left;
+  }
 }
 
-.youtube_resize img {
-	width: 100%;
+/* sections nav can be precisely positioned here */
+@media screen and (min-width: 630px) {
+  nav#sections {
+    left: 218px;
+    margin: 1em 0 0.5em;
+  }
 }
 
-.youtube_resize {
-	width: 100%;
+/* old layout works fine right here */
+@media screen and (min-width: 720px) {
+  body {
+    font-size: 16px;
+  }
 
-	position: relative;
-	margin:   1em;
-	box-shadow: 1px 1px 10px rgba(50, 50, 50, 0.5);
-}
+  h1 {
+    display: block;
+    padding-right: 0.4em;
+    margin: 1.5em 0 0;
+    border-right:  solid 6px $complement-color-l1;
+  }
 
+  h2 {
+    margin: 0 0 0.5em 0;
+  }
 
-/* narrow screen */
+  article {
+    width: 68%;
 
-@media screen and (max-width: 855px) {
-	p {
-		font-weight: 300;
-		font-size:   1.2em;
-	}
+    float: right;
+    padding: 0 1.3em 0 0;
+    margin-bottom: 2em;
+    border-right:  solid 6px $complement-color-l1;
+  }
 
-	article {
-		width: auto;
-		float: none;
-		padding: 1em;
-	}	
+  aside {
+    width: 25%;
+    float: left;
+    padding: 0 0 0 22px;
+  }
 
-	aside {
-		width: auto;
-		float: none;
-		padding: 1em;
-	}
+  time {
+    padding-right: 1em;
+    border-right: solid 6px $complement-color-l1;
+  }
 
-	#title {
-		text-align: center;
+  nav#sections {
+    left: 249px;
+  }
 
-		display: block;
-		float:   none;
-	}
+  nav#pages {
+    text-align: right;
 
-	nav {
-		text-align: center;
-		float: none;
-	}
+    ul {
+      width: 50%;
+    }
+    ul.site-nav {
+      float: right;
+    }
+    ul.page-nav {
+      text-align: left;
+      float: left;
+    }
+  }
 
-	.header-wrap {
-		line-height: normal;
-	}
-
-	ul {
-		padding: 0;
-	}
 }

@@ -16,10 +16,7 @@
 
   %nav{:id => "pages"}
     .header-wrap
-      %ul.left-nav
-        = optional_partial "#{@subtitle}_left_nav"
-
-      %ul.right-nav
+      %ul.site-nav
         %li
           %a{:href=>"https://twitter.com/jackiekircher"}<
             twitter
@@ -29,6 +26,6 @@
         %li
           %a{:href=>"https://github.com/jackiekircher"}<
             github
-
-
+      %ul.page-nav
+        = optional_partial "#{@subtitle}_left_nav"
 

@@ -3,16 +3,13 @@
 h1.section-title {
   text-align: right;
   padding-bottom: 1.5em;
-  margin: 1em 0 0;
 }
 
 section.project {
   text-align: left;
-  max-width: 68%;
   float: right;
 
   padding: 0 2em 4em;
-  border-right: solid 6px $complement-color-d1;
 
   header {
     color: $primary-color-l1;
@@ -26,7 +23,8 @@ section.project {
   }
 
   .project-link {
-    line-height: 0.7em;
+    word-wrap: break-word;
+    line-height: 1.0em;
     font-size:   0.7em;
   }
 
@@ -34,52 +32,62 @@ section.project {
     margin: 0;
   }
 }
-
-ul.tools {
-  list-style: none;
-  color:   #a0a0a0;
-
-  float: right;
-  position: relative;
-  top: 2px;
-  padding: 1.5em 0 0;
-  margin:  0;
-
-  li {
-    font-size: 1em;
-    display: inline;
-    padding: 0.5em 0 0 1em;
-    border-top: solid 2px $background-dark;
-  }
-}
-section.even {
-  border-color: $complement-color;
-}
 section.last {
   margin-bottom: 2em;
 }
 
+ul.tools {
+  list-style: none;
+  color:   #a0a0a0;
+  text-align: right;
+
+  float: right;
+  position: relative;
+  top: 2px;
+  padding: 0.5em 0 0;
+  margin:  1em 0 0;
+  border-top: solid 2px $background-dark;
+
+  li {
+    font-size: 1em;
+    display: inline-block;
+    padding: 0.5em 0 0 1em;
+    line-height: 1.5em;
+  }
+}
+
 figure {
-  float: left;
-  position: absolute;
-  left: 5em;
-  margin: 0 0 6em;
+  position: relative;
+  max-width:  360px;
+  min-width:  250px;
+  margin: 0 auto;
 
   figcaption {
-    margin-top: -0.5em;
+    width: 80%;
+    height: 90px;
+    text-align: center;
+    margin: 1em auto 0;
   }
 }
 
 .animation-container {
-  height: 360px;
-  width:  360px;
+  width:   100%;
+  height:  0;
+  padding: 50% 0;
+
+  position: relative;
+  left: -4px;
   background-color: $background-light;
   border: solid 4px $primary-color-l2;
 
   p {
     text-align: center;
     max-width:  300px;
-    margin: 170px auto;
+    margin: 0 auto;
+  }
+
+  #animation {
+    margin: -25% auto;
   }
 }
 
@@ -89,5 +97,43 @@ a.loaded {
 
   &:hover {
     text-decoration: none;
+  }
+}
+
+
+/* hardset the right margin for the animation continaer */
+@media screen and (min-width: 440px) {
+  figure {
+    margin: 0 1em 0 auto;
+  }
+}
+
+/* old layout works fine right here */
+/* fix the figure in a position relative to the list */
+@media screen and (min-width: 720px) {
+  figure {
+    margin-right: 2em;
+  }
+
+  section.project {
+    max-width: 68%;
+    float: right;
+
+    padding: 0 2em 4em;
+    border-right: solid 6px $complement-color-d1;
+  }
+  section.even {
+    border-color: $complement-color;
+  }
+}
+
+/* list names and figure can sit side-by-side */
+@media screen and (min-width: 950px) {
+  figure {
+    width: 360px;
+    float: left;
+    position: absolute;
+    left: 5em;
+    margin: 0 0 6em;
   }
 }
