@@ -95,7 +95,7 @@ a.loaded {
   font-weight: bold;
   color: initial;
 
-  &:hover {
+  &:hover, &:focus {
     text-decoration: none;
   }
 }

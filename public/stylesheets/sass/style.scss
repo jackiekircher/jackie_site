@@ -85,16 +85,13 @@ aside p {
 }
 
 
-nav a, nav a:hover{
-  border-bottom:none;
-}
 
 a, p a, ol li a, .archive a {
   text-decoration: none;
   color: $complement-color-d1;
   padding-bottom: 0px;
 
-  &:hover {
+  &:hover, &:focus {
     text-decoration: underline;
   }
 }
@@ -102,20 +99,19 @@ a, p a, ol li a, .archive a {
 header #title a {
   color: white;
 
-  &:hover {
+  &:hover, &:focus {
     text-decoration: none;
   }
 }
 
-nav a:hover {
+nav a:hover, nav a:focus {
   text-decoration: none;
 }
 
 .archive a {
   color: black;
 
-  &:hover {
-    text-decoration: none;
+  &:hover, &:focus {
     color: $complement-color;
   }
 }
@@ -196,15 +192,15 @@ nav#pages {
 
     li {
       display: inline-block;
-      padding: 0 0.4em;
+      padding: 0;
       margin:  0;
+    }
 
-      position: relative;
-      border-bottom: solid 2px $background-dark;
-
-      &:hover {
-        border-bottom: solid 2px $complement-color-l1;
-      }
+    a {
+      padding: 0.2em 0.4em;
+    }
+    a:hover, a:focus {
+      border-bottom: solid 2px $complement-color-l1;
     }
   }
 }
