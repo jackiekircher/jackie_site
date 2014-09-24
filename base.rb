@@ -6,7 +6,7 @@ class JackieSite < Sinatra::Base
   SUBTITLE = "dotcom"
   SECTIONS = {
                SUBTITLE   => { :path  => "/",
-                               :label =>  ".." },
+                               :label =>  "/.." },
                "blog"     => { :path  => "/blog",
                                :label =>  "blog" },
                "projects" => { :path  => "/projects",

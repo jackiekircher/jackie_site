@@ -153,48 +153,32 @@ header #title {
 }
 
 nav#sections {
-  width:  4em;
-  height: 1em;
-  text-align:  left;
+  text-align:  center;
   line-height: 0.4em;
   font-size:   0.4em;
 
   display:  block;
   position: relative;
-  margin: 1em auto 0.5em;
+  margin: 1.5em auto 0.5em;
+
 
   ul {
-    width: 4em;
     list-style: none;
     line-height: 1em;
     font-size:   1.5em;
-    background-color: $primary-color;
+    padding: 0;
+    margin:  0;
 
-    display:  none;
-    position: relative;
-    top: 4px;
-    padding: 0.5em 1em 0;
-    margin:  0 1em;
-    border-bottom: solid 4px $primary-color-l2;
-    z-index: $top-index;
-
-    &:hover {
-      display: block;
-    }
-
-    a:hover {
+    a:hover, a:focus {
       color: $complement-color-l2;
     }
 
     li {
-      width: auto;
+      display: inline;
+      margin:  0 0.3em;
     }
   }
 }
-nav#sections:hover ul {
-  display: block;
-}
-
 
 nav#pages {
   text-align: center;
@@ -323,20 +307,6 @@ cite {
   background: #B3E8FA; /* Firefox */
 }
 
-/* title fits on one line */
-@media screen and (min-width: 440px) {
-  header {
-    text-align: left;
-  }
-}
-
-/* sections nav can be precisely positioned here */
-@media screen and (min-width: 630px) {
-  nav#sections {
-    left: 218px;
-    margin: 1em 0 0.5em;
-  }
-}
 
 /* old layout works fine right here */
 @media screen and (min-width: 720px) {
@@ -353,6 +323,10 @@ cite {
 
   h2 {
     margin: 0 0 0.5em 0;
+  }
+
+  header {
+    text-align: left;
   }
 
   article {
@@ -376,7 +350,10 @@ cite {
   }
 
   nav#sections {
-    left: 249px;
+    width: 30em;
+    text-align: left;
+    left: 3em;
+    margin: 1.5em 0 0.5em 0;
   }
 
   nav#pages {
