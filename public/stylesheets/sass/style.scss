@@ -88,6 +88,7 @@ aside p {
 
 a, p a, ol li a, .archive a {
   text-decoration: none;
+  font-weight: normal;
   color: $complement-color-d1;
   padding-bottom: 0px;
 
@@ -98,10 +99,14 @@ a, p a, ol li a, .archive a {
 
 header #title a {
   color: white;
+  font-weight: normal;
 
   &:hover, &:focus {
     text-decoration: none;
   }
+}
+nav a {
+  font-weight: normal;
 }
 
 #title a.skip-link {
@@ -133,7 +138,7 @@ nav a:hover, nav a:focus {
   color: black;
 
   &:hover, &:focus {
-    color: $complement-color;
+    color: $complement-color-d1;
   }
 }
 
