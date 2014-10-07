@@ -21,7 +21,8 @@ h1 {
 }
 
 h2 {
-  font-family: 'Arial', sans-serif;
+  color: $primary-color;
+  font-family: 'Arial',sans-serif;
   font-size:   2em;
 }
 
@@ -37,6 +38,10 @@ span.prefix, span.suffix {
 
 article.archive {
   margin-top: 70px;
+}
+
+section {
+  margin-bottom: 3em;
 }
 
 p, .archive {
@@ -282,6 +287,19 @@ cite {
 }
 .float-l {
   float: left;
+}
+
+.hidden {
+  display: none;
+}
+
+.error {
+  font-size:   1.3em;
+  font-weight: bold;
+  color: $error-color;
+  padding-left:  1.5em;
+  margin-bottom: 2em;
+  border-left:   solid 4px $error-color;
 }
 
 

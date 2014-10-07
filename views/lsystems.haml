@@ -1,0 +1,67 @@
+- content_for :javascript do
+  :javascript
+    window.onerror = function(e) {
+      $('p.hidden').show();
+      $('canvas#lsystem').hide();
+    }
+  %script{:src => "/javascript/processing.min.js"};
+
+%h1.section-title
+  L-systems n'at
+
+%article
+
+  %p.hidden.error
+    you need to use a browser that has WebGL enabled in order to run this :(
+
+  %canvas#lsystem{'data-processing-sources' => "/l-systems/l_system.pde",
+                  'width' => 600, 'height' => 600}
+    %p.error
+      your browser does not support the canvas tag, which is required to view this :(
+
+  %noscript
+    %p.error
+      sorry, but JavaScript needs to be enabled to run this :(
+
+  %section#controls
+    %h2
+      controls
+    %ul
+      %li
+        %strong click and drag:
+        rotate the system
+      %li
+        %strong c:
+        reset the camera
+      %li
+        %strong s:
+        take a screen shot
+      %li
+        %strong r:
+        replay the current system
+      %li
+        %strong space:
+        create a new system with random angles
+    %p
+      %strong *note*
+      you must click on the canvas above to interact with it, and once it has focus you must click away from it to use browser keyboard shortcuts
+
+  %section#about
+    %h2
+      about the project
+
+    %p
+      %a{:href => "https://github.com/jackiekircher/l-systems"}
+        view the source
+
+    %p
+      this is just a playful little project that I started
+      to experiment with l-systems. its current iteration
+      uses a static start and set of production rules, but
+      randomizes the drawing rules. I deliberately made the
+      production rules explicitly tree-like, but I think the
+      random angles of the branches make for some really
+      interesting drawings.
+
+    %p
+      this project is built almost entirely upon Jose Sanchez's (@jomasan) <a href="https://www.youtube.com/watch?v=qF8LGLVrwfo">tutorial</a>. I may have refactored just about everything and added a few elements of my own but I wouldn't have known where to start without you. thank you Jose!

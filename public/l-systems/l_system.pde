@@ -8,15 +8,15 @@ int     currentFrame;
 int     currentIteration;
 
 void setup() {
-  size(1000, 800, P3D);
+  size(600, 600, P3D);
   smooth();
 
-  camera(0, 0, 0,  // eyeX, eyeY, eyeZ
-         0, 0, 0,  // centerX, centerY, centerZ
-         0, 1, 0); // upX, upY, upZ
-  arcCam = new ArcBall(500, 400, -200, 1000, this);
+  camera(300, 300, 525,  // eyeX, eyeY, eyeZ
+         300, 300,   0,  // centerX, centerY, centerZ
+           0,   1,   0); // upX, upY, upZ
+  arcCam = new ArcBall(300, 300, -200, 1000, this);
 
-  font = createFont("Monaco",48,true);
+  font = createFont("Courier",24,true);
 
   recording        = false;
   growthDelay      = 6;
@@ -61,9 +61,11 @@ void randomize() {
    Replaced Vec3 with internal PVector. Added rotateAround() to
    handle missing rotate(a,v0,v1,v2) in Processing.js 1.4.1
    fjenett - 2012-11
+
    Adapted into Processing library 5th Feb 2006 Tom Carden
    from "simple arcball use template" 9.16.03 Simon Greenwold
    Copyright (c) 2003 Simon Greenwold
+
    Copyright (c) 2006 Tom Carden
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Lesser General Public
@@ -79,46 +81,49 @@ void randomize() {
    Boston, MA 02111-1307 USA
  */
 
-public class ArcBall
-{
+public class ArcBall {
   PGraphics graphics;
-  float center_x, center_y, center_z, radius;
-  PVector v_down, v_drag;
-  Quat q_now, q_down, q_drag;
+  float     center_x, center_y, center_z, radius;
+  Quat      q_now, q_down, q_drag;
+  PVector   v_down, v_drag;
   PVector[] axisSet;
-  int axis;
+  int       axis;
 
   /** defaults to radius of min(width/2,height/2) and center_z of -radius */
   public ArcBall( PApplet parent ) {
     this( parent.g );
   }
 
-  public ArcBall( float center_x, float center_y, float center_z, float radius, PApplet parent ) {
+  public ArcBall( float center_x, float center_y, float center_z,
+                  float radius, PApplet parent ) {
     this( center_x, center_y, center_z, radius, parent.g );
   }
 
   /** defaults to radius of min(width/2,height/2) and center_z of -radius */
   public ArcBall( PGraphics g ) {
-    this( g.width/2.0f, g.height/2.0f, -min( g.width/2.0f, g.height/2.0f ), min( g.width/2.0f, g.height/2.0f ), g );
+    this( g.width/2.0f, g.height/2.0f, -min( g.width/2.0f, g.height/2.0f ),
+          min( g.width/2.0f, g.height/2.0f ), g );
   }
 
-  public ArcBall( float center_x, float center_y, float center_z, float radius, PGraphics g ) {
-    graphics = g;
+  public ArcBall( float center_x, float center_y, float center_z,
+                  float radius, PGraphics g ) {
+    graphics      = g;
     this.center_x = center_x;
     this.center_y = center_y;
     this.center_z = center_z;
-    this.radius = radius;
-    v_down = new PVector();
-    v_drag = new PVector();
-    q_now = new Quat();
-    q_down = new Quat();
-    q_drag = new Quat();
+    this.radius   = radius;
+    v_down  = new PVector();
+    v_drag  = new PVector();
+    q_now   = new Quat();
+    q_down  = new Quat();
+    q_drag  = new Quat();
     axisSet = new PVector[] {
-      new PVector(1.0f, 0.0f, 0.0f),
-          new PVector(0.0f, 1.0f, 0.0f),
-          new PVector(0.0f, 0.0f, 1.0f)
+                new PVector(1.0f, 0.0f, 0.0f),
+                new PVector(0.0f, 1.0f, 0.0f),
+                new PVector(0.0f, 0.0f, 1.0f)
     };
     axis = -1; // no constraints...
+
     // this is a hack to initialize it with something .. we can do better
     mousePressed( center_x, center_y );
     mouseDragged( center_x-0.0001, center_y-0.0001 );
@@ -133,59 +138,55 @@ public class ArcBall
     mouseDragged( center_x-0.0001, center_y-0.0001 );
   }
 
-  public void mousePressed ( float mx, float my )
-  {
+  public void mousePressed ( float mx, float my ) {
     v_down = mouse_to_sphere( mx, my );
     q_down.set(q_now);
     q_drag.reset();
   }
-  public void mouseDragged ( float mx, float my )
-  {
+
+  public void mouseDragged ( float mx, float my ) {
     v_drag = mouse_to_sphere( mx, my );
     q_drag.set( v_down.dot(v_drag), v_down.cross(v_drag) );
   }
-  public void apply ()
-  {
+
+  public void apply () {
     graphics.translate(center_x, center_y, center_z);
     q_now = Quat.mul(q_drag, q_down);
     applyQuat2Matrix(q_now);
     graphics.translate(-center_x, -center_y, -center_z);
   }
-  PVector mouse_to_sphere ( float x, float y )
-  {
+
+  PVector mouse_to_sphere ( float x, float y ) {
     PVector v = new PVector();
     v.x = (x - center_x) / radius;
     v.y = (y - center_y) / radius;
     float m = v.x * v.x + v.y * v.y;
-    if (m > 1.0f)
-    {
+    if (m > 1.0f) {
       v.normalize();
     }
-    else
-    {
+    else {
       v.z = sqrt(1.0f - m);
     }
+
     return (axis == -1) ? v : constrain_vector(v, axisSet[axis]);
   }
 
-  PVector constrain_vector(PVector vector, PVector axis)
-  {
+  PVector constrain_vector(PVector vector, PVector axis) {
     PVector res = new PVector();
     axis.mult(axis.dot(vector));
     res.sub(vector, axis);
     res.normalize();
+
     return res;
   }
 
-  void applyQuat2Matrix(Quat q)
-  {
+  void applyQuat2Matrix(Quat q) {
     // instead of transforming q into a matrix and applying it...
     float[] aa = q.getValue();
     rotateAround( aa[0], aa[1], aa[2], aa[3] );
   }
 
-  void rotateAround ( float angle, float v0, float v1, float v2 )
-  {
+  void rotateAround ( float angle, float v0, float v1, float v2 ) {
     float norm2 = v0 * v0 + v1 * v1 + v2 * v2;
     if (Math.abs(norm2 - 1) > EPSILON) {
       float norm = sqrt(norm2);
@@ -193,12 +194,13 @@ public class ArcBall
       v1 /= norm;
       v2 /= norm;
     }
-    float cx = 0;
-    float cy = 0;
-    float cz = 0;
-    float c = cos(angle);
-    float s = sin(angle);
-    float t = 1.0f - c;
+
+    float cx  = 0;
+    float cy  = 0;
+    float cz  = 0;
+    float c   = cos(angle);
+    float s   = sin(angle);
+    float t   = 1.0f - c;
     float[] m = new float[9];
     m[0] = (t*v0*v0) + c; // 0, 0
     m[1] = (t*v0*v1) - (s*v2); // 0, 1
@@ -209,65 +211,69 @@ public class ArcBall
     m[6] = (t*v0*v2) - (s*v1); // 2, 0
     m[7] = (t*v1*v2) + (s*v0); // 2, 1
     m[8] = (t*v2*v2) + c; // 2, 2
+
     graphics.applyMatrix( m[0], m[1], m[2], 0, m[3], m[4], m[5], 0, m[6], m[7], m[8], 0, 0, 0, 0, 1 );
   }
 }
 
-static class Quat
-{
+static class Quat {
   float w, x, y, z;
+
   Quat() {
     reset();
   }
-  Quat(float w, float x, float y, float z)
-  {
+
+  Quat(float w, float x, float y, float z) {
     this.w = w;
     this.x = x;
     this.y = y;
     this.z = z;
   }
-  void reset()
-  {
+
+  void reset() {
     w = 1.0f;
     x = 0.0f;
     y = 0.0f;
     z = 0.0f;
   }
-  void set ( float w, PVector v )
-  {
+
+  void set ( float w, PVector v ) {
     this.w = w;
     x = v.x;
     y = v.y;
     z = v.z;
   }
-  void set( Quat q)
-  {
+
+  void set( Quat q) {
     w = q.w;
     x = q.x;
     y = q.y;
     z = q.z;
   }
-  static Quat mul ( Quat q1, Quat q2 )
-  {
+
+  static Quat mul ( Quat q1, Quat q2 ) {
     Quat res = new Quat();
     res.w = q1.w * q2.w - q1.x * q2.x - q1.y * q2.y - q1.z * q2.z;
     res.x = q1.w * q2.x + q1.x * q2.w + q1.y * q2.z - q1.z * q2.y;
     res.y = q1.w * q2.y + q1.y * q2.w + q1.z * q2.x - q1.x * q2.z;
     res.z = q1.w * q2.z + q1.z * q2.w + q1.x * q2.y - q1.y * q2.x;
+
     return res;
   }
-  float[] getValue()
-  {
+
+  float[] getValue() {
     // transforming this quat into an angle and an axis vector...
     float[] res = new float[4];
     float sa = (float) Math.sqrt(1.0f - w * w);
     if (sa < EPSILON) {
       sa = 1.0f;
     }
+
     res[0] = (float) Math.acos(w) * 2.0f;
     res[1] = x / sa;
     res[2] = y / sa;
     res[3] = z / sa;
+
     return res;
   }
 } // Quat
@@ -419,8 +425,8 @@ class LSystem {
       segments.add(new ArrayList<LSegment>());
     }
 
-    origin      = new PVector(500, 600, -200);
-    direction   = new PVector(0, -50,    0);
+    origin      = new PVector(300, 500, -200);
+    direction   = new PVector(0,   -50,    0);
 
     aRotation   = new Rotation3D();
     aRotation.x = random(0,10);
@@ -471,7 +477,7 @@ class Rotation3D {
 }
 void overlayText() {
   fill(255);
-  textFont(font, 22);
+  textFont(font, 24);
 
   String aData = new String("A ->"  +
                             "  x: " + nfp(system.aRotation.x,2,2) + "°" +
@@ -490,19 +496,20 @@ void overlayText() {
                             "  y: " + nfp(system.cRotation.y,2,2) + "°" +
                             "  z: " + nfp(system.cRotation.z,2,2) + "°");
 
-  text("rules: (A -> F), (F -> AC+C+C), (C -> CB), (B -> B)", 20, 20);
-  text("start: A, angle: (0,120°,0)", 20, 50);
+  text("rules: (A->F),(F->AC+C+C),(C->CB),(B->B)", 10, 20);
+  text("start: A, angle: (0,120°,0)", 10, 44);
 
-  text("Drawing rules (axis rotation)", 20, 650);
-  text(aData, 20, 680, 0);
-  text(fData, 20, 710, 0);
-  text(bData, 20, 740, 0);
-  text(cData, 20, 770, 0);
+  text("drawing rules (axis rotation)", 10, 494);
+  text(aData, 10, 518, 0);
+  text(fData, 10, 542, 0);
+  text(bData, 10, 566, 0);
+  text(cData, 10, 590, 0);
 }
 
 /* user inputs
  *
- * r   -> reset the current system and draw from the beginning
+ * r   -> replay the current system and draw from the beginning
+ * c   -> reset the camera to its initial position
  * s   -> save the current frame in the screenshots dir
  * p   -> replay the building of the current system and save each frame
  *        to the image_dump dir

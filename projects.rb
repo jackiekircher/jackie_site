@@ -21,4 +21,8 @@ class JackieSite < Sinatra::Base
     haml :animations
   end
 
+  get '/projects/l-systems' do
+    haml :lsystems
+  end
+
 end

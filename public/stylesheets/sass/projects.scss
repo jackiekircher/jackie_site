@@ -10,9 +10,9 @@ section.project {
   float: right;
 
   padding: 0 2em 4em;
+  margin: 0;
 
   header {
-    color: $primary-color-l1;
     text-align: right;
     margin-bottom: 0.5em;
   }
@@ -100,6 +100,12 @@ a.loaded {
   }
 }
 
+canvas {
+  background: $primary-color-l1;
+  padding: 1em;
+  margin-bottom: 2em;
+  border: solid 2px $primary-color-l2;
+}
 
 /* hardset the right margin for the animation continaer */
 @media screen and (min-width: 440px) {
