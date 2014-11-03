@@ -128,7 +128,7 @@ canvas {
     padding: 0 2em 4em;
     border-right: solid 6px $complement-color-d1;
   }
-  section.even {
+  section:nth-child(odd) {
     border-color: $complement-color-l1;
   }
 }
