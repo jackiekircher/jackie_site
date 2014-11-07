@@ -12,3 +12,4 @@ gem 'redcarpet'
 gem 'builder'
 
 gem 'minitest'
+gem 'minitest-reporters'
