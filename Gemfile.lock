@@ -6,6 +6,7 @@ GEM
     daemons (1.1.6)
     eventmachine (0.12.10)
     haml (3.1.4)
+    minitest (5.4.2)
     rack (1.4.1)
     rack-protection (1.2.0)
       rack
@@ -37,6 +38,7 @@ PLATFORMS
 DEPENDENCIES
   builder
   haml
+  minitest
   rake
   redcarpet
   sass

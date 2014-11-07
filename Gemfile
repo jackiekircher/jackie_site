@@ -10,3 +10,5 @@ gem 'haml'
 gem 'sass'
 gem 'redcarpet'
 gem 'builder'
+
+gem 'minitest'
