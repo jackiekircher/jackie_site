@@ -30,9 +30,6 @@ class Post
     date_str = name.match(/^\d{4}-\d{2}-\d{2}/).to_s
     @date = Date.parse(date_str)
     @slug = name[/#{date_str}-(.*)$/,1]
-
-    puts @slug
-
   end
 
   def content

@@ -1,7 +1,5 @@
-require 'minitest/autorun'
+require_relative 'test_helper'
 require_relative '../base'
-
-MiniTest::Reporters.use! MiniTest::Reporters::DefaultReporter.new
 
 class HelpersTest < MiniTest::Test
   include SiteHelpers
