@@ -6,18 +6,6 @@ class JackieSite < Sinatra::Base
     @subtitle = 'blog'
   end
 
-  helpers do
-    def latest_posts
-      posts = Dir.glob("blog/posts/*.md").map do |post|
-        post = post[/blog\/posts\/(.*?).md$/,1]
-        Post.new(post)
-      end
-      # since posts filenames start with the date, this
-      # orders them most recent -> least recent
-      posts.sort_by(&:name).reverse
-    end
-  end
-
   get '/blog' do
     source   = latest_posts.first
     @content = source.content

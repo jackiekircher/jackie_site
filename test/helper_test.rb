@@ -28,4 +28,21 @@ class HelpersTest < MiniTest::Test
     optional_partial("does not exist")
     assert true
   end
+
+  def test_latest_posts_are_in_reverse_chronological_order
+    posts = []
+    File.stub(:read, "") do
+      # create a set of posts in random chronological order,
+      # ensuring that they are not in reverse
+      until posts != posts.sort_by(&:date).reverse
+        date   = Time.at((rand(365))*86400)
+        posts << Post.new("#{date.strftime("%Y-%m-%d")}-foo")
+      end
+    end
+
+    Post.stub(:all, posts) do
+      assert_equal latest_posts.sort_by(&:date).reverse,
+                   latest_posts
+    end
+  end
 end

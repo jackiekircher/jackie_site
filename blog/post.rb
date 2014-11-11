@@ -43,4 +43,11 @@ class Post
   def formatted_date
     @formatted_date ||= @date.strftime("%Y.%m.%d")
   end
+
+  def self.all
+    Dir.glob("blog/posts/*.md").map do |post|
+      post = post[/blog\/posts\/(.*?).md$/,1]
+      Post.new(post)
+    end
+  end
 end

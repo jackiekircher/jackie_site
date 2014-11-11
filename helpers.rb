@@ -21,4 +21,11 @@ module SiteHelpers
   def url_base
     "http://#{request.host_with_port}"
   end
+
+  def latest_posts
+    posts = Post.all
+    # since posts filenames start with the date, this
+    # orders them most recent -> least recent
+    posts.sort_by(&:name).reverse
+  end
 end
