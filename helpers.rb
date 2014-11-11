@@ -1,5 +1,7 @@
 module SiteHelpers
 
+  ## general ##
+
   def title
     return JackieSite::TITLE if @title.nil?
     "#{JackieSite::TITLE} &raquo; #{@title}"
@@ -22,10 +24,21 @@ module SiteHelpers
     "http://#{request.host_with_port}"
   end
 
+
+  ## blog ##
+
   def latest_posts
     posts = Post.all
     # since posts filenames start with the date, this
     # orders them most recent -> least recent
     posts.sort_by(&:name).reverse
+  end
+
+
+  ## projects ##
+
+  def css3_animations
+    animations = Dir.entries("public/css3_animations/animations")
+    return animations.reject!{|a| a =~ /^\./}.sort
   end
 end

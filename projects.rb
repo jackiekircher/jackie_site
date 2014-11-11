@@ -4,13 +4,6 @@ class JackieSite < Sinatra::Base
     @subtitle = 'projects'
   end
 
-  helpers do
-    def css3_animations
-      animations = Dir.entries("public/css3_animations/animations")
-      return animations.reject!{|a| a =~ /^\./}.sort
-    end
-  end
-
   get '/projects' do
     haml :projects
   end
