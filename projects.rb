@@ -18,4 +18,8 @@ class JackieSite < Sinatra::Base
     haml :lsystems
   end
 
+  get '/projects/nepeta-cataria' do
+    haml :nepeta_cataria
+  end
+
 end

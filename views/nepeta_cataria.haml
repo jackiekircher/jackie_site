@@ -1,0 +1,40 @@
+- content_for :header do
+  %script{:src => "https://ssl-webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/jquery.min.js"}
+  %script{:src => "/javascript/unity-web-init.js"}
+  %script{:src => "/javascript/unity-web.js"}
+
+%h1.section-title
+  nepeta cataria
+
+%article
+  %p.right
+    %a{:href => "#how-to-play"}
+      ▼
+    play instructions below
+    %a{:href => "#how-to-play"}
+      ▼
+  %div.content
+    %div.unity-wrapper
+      %div#unityPlayer
+        %div.missing
+          %a{:href => "http://unity3d.com/webplayer/", :title => "Unity Web Player. Install now!"}
+            %img{:alt => "Unity Web Player. Install now!",
+                 :src => "http://webplayer.unity3d.com/installation/getunity.png",
+                 :width => "193", :height => "63"}
+
+  %section#how-to-play
+    %h2
+      how to play
+    %p
+      Press right to let cats into the club, press left to reject them.
+    %p
+      As the bouncer to the world's premier cat club, it's important to
+      enforce a strict dress code. Since the requirements change daily
+      you have a convenient list. Make sure that only cats who match at
+      least one element of the "in" section are let into the club, and
+      under no circumstances are cats featuring any element of the "out"
+      section to be allowed entry.
+    %p
+      Unfortunately, high scores don't work for the web version. If you
+      want to compare your scores feel free to download any of the
+      desktop clients at our <a href="http://ludumdare.com/compo/ludum-dare-34/?action=preview&uid=66243">ludum dare entry page</a>.

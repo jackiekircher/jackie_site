@@ -56,6 +56,16 @@ ul.tools {
   }
 }
 
+#unityPlayer {
+  position: absolute;
+  right: 2em;
+}
+
+.unity-wrapper {
+  height: 405px;
+  padding-bottom: 3em;
+}
+
 figure {
   position: relative;
   max-width:  360px;
