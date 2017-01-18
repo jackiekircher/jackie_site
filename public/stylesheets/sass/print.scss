@@ -1,0 +1,21 @@
+.print-only {
+  display: none;
+}
+
+@page {
+  margin: 20mm;
+}
+
+@media only print {
+  .no-print {
+    display: none;
+  }
+
+  .print-only {
+    display: block;
+  }
+
+  .section-title {
+    text-align: left;
+  }
+}

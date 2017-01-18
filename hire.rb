@@ -1,6 +1,7 @@
 class JackieSite < Sinatra::Base
 
   before '/hire*' do
+    @header_class = 'no-print'
     @subtitle = 'hire'
   end
 
