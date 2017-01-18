@@ -18,6 +18,7 @@ article.resume {
     text-shadow: 0px 1px 0px $background-dark;
     margin-top: 2em;
     @media only print {
+      color: $primary-color-d1;
       font-size: 16pt;
       margin-top: 8mm;
     }
@@ -28,6 +29,14 @@ article.resume {
     margin-bottom: 0;
     @media only print {
       font-size: 13pt;
+    }
+  }
+
+  a {
+    @media only print {
+      color: $complement-color-d1;
+      text-decoration: underline;
+      font-weight: normal;
     }
   }
 
